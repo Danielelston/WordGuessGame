@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Final Fantasy Word Guess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="assets/javascript/game.js"></script>
+    <!--   <|*_*|>   -->
+</head>
+<body>
+   
+    <div class="header">   
+        <div class="container">
+           <h1>Final Fantasy Word Guess</h1>
+        </div>
+    </div>  
+    
+    <br>
+    
+    <div class="container bodyBackground">
+        <div class="content startScreen" id="startScreenId">
+            <h3>Press start to begin</h3>
+            <br>
+            <div class="startButton" onclick="gameStart();" id="startButtonId">
+                <button class="invisBtn"></button>
+            </div>    
+        </div>
+
+        <div class="content gameScreen" id="gameScreenId">
+            <p id="guesses"></p>
+            
+            <p>Type to make a guess.</p>
+
+
+            <p id="gameBlanks"></p>
+
+
+
+        </div>
+    </div>
+</body>
+</html>
