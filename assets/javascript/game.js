@@ -3,10 +3,10 @@ var lose = 0;
 var remainingGuesses = 10;
 var userGuesses = [];
 var blankWord = [];
-var blankWordUF
 
-var wordList = ["lightning", "squall", "sephiroth", "tidus-s", "tifa-a", "cloud-d", "noctis-s", "yuffie"];
+var wordList = ["LIGHTNING", "SQUALL", "SEPHIROTH", "TIDUS", "TIFA", "CLOUD", "NOCTIS", "YUFFIE"];
 var wordArray = [];
+var validInput = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
 // Get random word
@@ -15,26 +15,19 @@ function gameStart() {
     var rng = [Math.floor(Math.random() * wordList.length)];
     var word = wordList[rng];
 
-    console.log(word);
-    alert(word);
-
-    blankWordUF = (blankWord.join(" "));
+    alert(word); // remove from final game
 
     for (var i = 0; i < word.length; i++) {
 
         blankWord.push("_");
 
     }
-    console.log(blankWord);
-    console.log(blankWordUF);
     updateBlanks();
-    // document.getElementById("gameBlanks").innerHTML = (blankWord.join(" "));
 
     for (var a = 0; a < word.length; a++) {
         var aChar = word.charAt(a);
         wordArray.push(aChar);
     }
-    console.log(wordArray);
 
     var startScreen = document.getElementById("startScreenId");
     startScreen.style.display = "none";
@@ -43,85 +36,70 @@ function gameStart() {
     gameScreen.style.display = "block";
 
     updateGuessCounter()
-
-
-
     wordGame();
 
 };
 
-var updateBlanks = function () {
-    //TODO 
+function updateBlanks () {
     document.getElementById("gameBlanks").innerHTML = (blankWord.join(" "));
-
 };
 
-var updateGuessCounter = function () {
+function updateGuessCounter () {
     document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
 };
 
+function updateUserGuesses () {
+    document.getElementById("userGuessedLetters").innerHTML = (userGuesses);
+};
+
+
 function wordGame() {
 
-    console.log("wordgame started")
     document.onkeyup = function userInput(event) {
         var userKey = event.key;
-        console.log(userKey);
+        userKey = userKey.toUpperCase();
 
-        if (userGuesses.indexOf(userKey) === -1) {
-            userGuesses.push(userKey);
-            updateGuessCounter();
-            if (wordArray.indexOf(userKey) > -1) {
+        if (validInput.indexOf(userKey) > -1){
 
-                for (var w = 0; w < wordArray.length; w++) {
+            if (userGuesses.indexOf(userKey) === -1) {
+                userGuesses.push(userKey);
+                updateUserGuesses();
 
-                    if (wordArray[w] === userKey) {
+                if (wordArray.indexOf(userKey) > -1) {
 
-                        blankWord[w] = userKey;
-                        console.log(w);
-                        updateBlanks();
+                    for (var w = 0; w < wordArray.length; w++) {
+
+                        if (wordArray[w] === userKey) {
+
+                            blankWord[w] = userKey;
+                            updateBlanks();
+                            if(blankWord.indexOf("_") === -1) {
+                                alert("you win!");
+                                
+                            }
+                        }
+                    }
+
+                    var wordChar = wordArray.indexOf(userKey);
+                    blankWord[wordChar] = userKey;
+                    updateBlanks();
+
+                } else {
+                    remainingGuesses--;
+                    updateGuessCounter();
+
+                    if (remainingGuesses < 1) {
+                        alert("you died");
                     }
                 }
-                var wordChar = wordArray.indexOf(userKey);
-                console.log(wordChar);
-                blankWord[wordChar] = userKey;
-                console.log(blankWord);
-                updateBlanks();
-
-                if(blankWord.indexOf("_") === -1) {
-                    alert("you win!");
-                    
-                }
-
             } else {
-                remainingGuesses--;
-                updateGuessCounter();
-
-                if (remainingGuesses < 1) {
-                    alert("you died");
-                    // reset vars and send user to new game screen------------------------------------
-                }
+                alert("repeat guess!");
             }
-
-
-
         } else {
-            alert("repeat guess!");
-        }
-
-        // for (var A = 0; A < userGuesses.length; A++) {
-
-
-        // }
-        // if(userKey)
-        // console.log("userGuesses" + userQuesses);
-
-
+            alert("invalid input");
+        }    
     };
-    // var userInput = 
 }
 
-function logic() {
-
-}
 
 

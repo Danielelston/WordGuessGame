@@ -19,20 +19,17 @@
     
     <br>
     
-    <div class="container bodyBackground">
+    <div class="bodyBackground container gameBody">
         <div class="content startScreen" id="startScreenId">
-            <h3>Press start to begin</h3>
+            <p id="pressStart">Press start to begin</p>
             <br>
-            <div class="startButton" onclick="gameStart()" id="startButtonId">
-                <!-- <button class="invisBtn"></button> -->
-            </div>    
+            <div class="startButton" onclick="gameStart()" id="startButtonId"></div>
         </div>
 
         <div class="content gameScreen" id="gameScreenId">
             <p id="guesses"></p>
             
             <p>Type to make a guess.</p>
-
 
             <p id="gameBlanks" class="gameBlanksStyle"></p>
 
