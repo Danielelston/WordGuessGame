@@ -183,3 +183,6 @@
     transform: translate(-50%, -50%);
 }
 
+.gameBlanksStyle {
+    letter-spacing: .5em;
+}
