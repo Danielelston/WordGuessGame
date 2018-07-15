@@ -1,11 +1,11 @@
 var win = 0;
 var lose = 0;
 var remainingGuesses = 10;
-var userQuesses = [];
+var userGuesses = [];
 var blankWord = [];
 var blankWordUF
 
-var wordList = ["lightning", "squall", "sephiroth", "tidus", "tifa", "cloud", "noctis", "yuffie"];
+var wordList = ["lightning", "squall", "sephiroth", "tidus-s", "tifa-a", "cloud-d", "noctis-s", "yuffie"];
 var wordArray = [];
 
 
@@ -18,9 +18,7 @@ function gameStart() {
     console.log(word);
     alert(word);
 
-    blankWordUF = (blankWord.join(" ")); 
-
-
+    blankWordUF = (blankWord.join(" "));
 
     for (var i = 0; i < word.length; i++) {
 
@@ -44,7 +42,7 @@ function gameStart() {
     var gameScreen = document.getElementById("gameScreenId");
     gameScreen.style.display = "block";
 
-    document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
+    updateGuessCounter()
 
 
 
@@ -52,55 +50,70 @@ function gameStart() {
 
 };
 
-var updateBlanks = function (){
+var updateBlanks = function () {
+    //TODO 
     document.getElementById("gameBlanks").innerHTML = (blankWord.join(" "));
 
 };
 
-var updateGuessCounter = function (){
+var updateGuessCounter = function () {
     document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
 };
 
 function wordGame() {
 
-   
-
     console.log("wordgame started")
-    // document.body.addEventListener("keyup", logic);
     document.onkeyup = function userInput(event) {
         var userKey = event.key;
         console.log(userKey);
 
-        if (userQuesses.indexOf(userKey) === -1) {
-            userQuesses.push(userKey);
+        if (userGuesses.indexOf(userKey) === -1) {
+            userGuesses.push(userKey);
             updateGuessCounter();
-            // document.getElementById("userGuessedLetters").innerHTML = "Guesses:" + userQuesses;
-            // document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
             if (wordArray.indexOf(userKey) > -1) {
 
-                // logic for filling in correct letter guess-------------------------------------------------
-                alert("correct guess!");
+                for (var w = 0; w < wordArray.length; w++) {
+
+                    if (wordArray[w] === userKey) {
+
+                        blankWord[w] = userKey;
+                        console.log(w);
+                        updateBlanks();
+                    }
+                }
+                var wordChar = wordArray.indexOf(userKey);
+                console.log(wordChar);
+                blankWord[wordChar] = userKey;
+                console.log(blankWord);
+                updateBlanks();
+
+                if(blankWord.indexOf("_") === -1) {
+                    alert("you win!");
+                    
+                }
+
             } else {
                 remainingGuesses--;
                 updateGuessCounter();
-                //  document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
 
                 if (remainingGuesses < 1) {
                     alert("you died");
                     // reset vars and send user to new game screen------------------------------------
                 }
             }
+
+
+
         } else {
-            // document.getElementById("guesses").innerHTML = "Remaining guesses: " + remainingGuesses;
-            alert("repeat quess!");
+            alert("repeat guess!");
         }
 
-        for (var A = 0; A < userQuesses.length; A++) {
+        // for (var A = 0; A < userGuesses.length; A++) {
 
 
-        }
+        // }
         // if(userKey)
-        console.log(userQuesses);
+        // console.log("userGuesses" + userQuesses);
 
 
     };
