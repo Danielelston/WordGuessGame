@@ -6,6 +6,7 @@
     <title>Final Fantasy Word Guess</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <script src="assets/javascript/game.js"></script>
     <!--   <|*_*|>   -->
 </head>
@@ -23,20 +24,45 @@
         <div class="content startScreen" id="startScreenId">
             <p id="pressStart">Press start to begin</p>
             <br>
-            <div class="startButton" onclick="gameStart()" id="startButtonId"></div>
+            <div class="startButton" onclick="preGame()" id="startButtonId"></div>
         </div>
 
         <div class="content gameScreen" id="gameScreenId">
+            <div id="wins"></div>
+            <div id="lost"></div>
+
+            
             <p id="guesses"></p>
             
+            <p>Guess the correct final Fantasy charater name.</p>
+
             <p>Type to make a guess.</p>
 
             <p id="gameBlanks" class="gameBlanksStyle"></p>
 
             <div id="userGuessedLetters"></div>
 
-
         </div>
+
+        <div class="winScreen" id="winScreenId">
+            
+            <div class="victorybar">
+                VICTORY
+                <div id="continueButton" onclick="gameStart()"></div>
+            </div>
+            
+            
+        </div>
+        <div class="loseScreen" id="loseScreenId">
+                
+            <div class="losebar">
+                You Died
+                <div id="continueButton" onclick="gameStart()"></div>
+
+            </div>
+            
+        </div>
+
     </div>
 </body>
 </html>
