@@ -1,1 +1,87 @@
 # WordGuessGame
+
+This is a simple hangman game
+
+To play:
+
+-click the "start" button to begin. 
+    if you do not see a start button try loading the game in Chrome or Opera.
+
+-A random charater name from Final Fantasy is selected and displayed as blank spaces.
+
+-type in any letter to make a guess.
+    if your input is invalid, you should see an alert
+    if your input is a repeat, input you should see an alert
+    if your input is incorrect, "Remaining guesses" will go down.
+        if "Remaining guesses" goes to 0, you lose the game
+
+-your input will be added to a list called "User guesses".
+
+-if you guess the word correctly, you win.
+
+-if you are having trouble guessing the names or simply don't know them, check the console for the answer.
+
+Enjoy.
+
+             ~KUPA~KUPA~KUPA~
+
+MMMMMMMMWXOdl:;;;;:cldOKWWMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMWKx:,''''''''''',;oxONMMMMMMMMMMMMMMMMMMMMMM
+MMMMMNk:''''''''''''''''..,lKWMMMMMMMMMMMMMMMMMMMM
+MMMMNx;''''''''''''''''....'c0WMMMMMMMMMMMMMMMMMMM
+MMMWO;..'''''''''''''''......lXMMMMMMMMMMMMMMMMMMM
+MMMNd'........''''''''.......'xWMMMMMMMMMMMMMMMMMM
+MMMNo.........................cXMMMMMMMMMMMMMMMMMM
+MMMNo.........................cXMMMMMMMMMMMMMMMMMM
+MMMWk,........................oNMMMMMMMMMMMMMMMMMM
+MMMMXl.......................:0WMMMMMMMMMMMMMMMMMM
+MMMMWKl.....................:OWMMMMMMMMMMMMMMMMMMM
+MMMMMMXx;.................;dKWMMMMMMMMMMMMMMMMMMMM
+MMMMMMMWXxl,..........,cxOKWMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMWX0kddoodolxXWMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMW00WMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMXONMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMNOKMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMM0OWMMMMMMMMMMMMMMMWWWMMMMMMMM
+MMMMMMMMMMMMMMMMMMWWWK0NWWWWWWWWMMMMWNXK0KNMMMMMMM
+MMMWNNNWMMMMMWWWNNXXXXXXXXXXXXXXXNNNX0OkOKWMMMMMMM
+MMWKOOO0KXNWNXXXXXXXXXXXXXXXXXXKKKKKK00KNMMMMMMMMM
+MMMNKOkkkk0KKKKKKKKKKKKKKKKKKKKKKKK0KK0KNWMMMMMMMM
+MMMMMWX0kO0KKK0000000000000KK0000000000O0KNMMMMMMM
+MMMMMWX0OO0000000000000000000000000000OOOO0XWMMMMM
+MMMMWXOOOOOOOOOOOOOOO000OOOOOkkkkkkkkkkkOOOOKNMMMM
+MMMMX0OOOOOOOOOOOOOOOOOkxxxddddddddddddddxxxk0NMMM
+MMMN0OOkkOOOOOOkOOkOOkdoooooddddddddddooooloxOKNMM
+MMWKOOOOOOkkxxxddddxdlclllooooooooooolllllclxKKXWM
+MMXOkOOOOOkkxxxxxxxdc:ccllllllllllccccccccc:lOKKXW
+MWKkOO000KKKKKKKK00xc::::ccccc:::::::::::::;ck00KN
+MWKkO00KKKKKXXXKK0Odc;::::::::::;;;;;;;;;;;:okOO0X
+MWKkOO00KKKKKKKK00Oko:;;;;;;;;;;;;;;;;;;;;:lxkkkOX
+MWKkkOO000000000OOkkxo:;;;;;;;;;;;;;;;;;:codxxxkON
+MMNOxkkOOOOOOOOOkkkkkxdlcc::;;;;;;:::cclodxxxxxkXW
+MMWKkxxkkkkkkkkkkkxxxxxxdddooooooooodddddddxxxkXWM
+MMMWKkxxxxkkkxxxxxxxxxxxddddddddddddddddddddx0NWMM
+MMMMWXOxxxxxxxxxxxxxxxdddddddddddddddxxddxxOXWMMMM
+MMMMMMWXOxxxxxxxxxxxxxdddddddxxxxxxxxxxxk0XWMMMMMM
+MMMMMMMMWKkoodxxxxxxxxxxxxxxxxxxxxxkkO0XNWMMMMMMMM
+MMMMMMWN0dc::cldkOkxxxxxxxxxxxxxxk0XNWMMMMMMMMMMMM
+MMMMWXOoc:cclllodkkxxxxkkkkkkkkkkkOKNWWMMMMMMMMMMM
+MMMMWXKkddxxxxxxdxxxkkkkOOOOOOO00OOOOO0KNWMMMMMMMM
+MMMWNX0OkkkxxxxxxxkkkOOOOOO0000000000OOkO0XWMMMMMM
+MWX0OkkkkkxxxxxxkkkOOOOO0000000KKKK0000OkkO0XWMMMM
+N0kkkkkkkkkkkxxxkkkOOOO0000000KKKKKK000OOkkkOKNWMM
+0kkkkkOO0KXX0xxkkkkOOOO000000000KKKK0000Okkkkk0XWM
+NXXXXNNWWMMNOxxkkkkOOOOO000000000K000000O00OkkkOXW
+MMMMMMMMMMMNOxxxkkkkOOOOOOO000000000000OOKWWXKKKNM
+MMMMMMMMMMMNOxxxkkkkkOOOOOOO0000000000OOOXWMMMMMMM
+MMMMMMMMMMMW0xxxxkkkkkOOOOOOOOO00000OOOO0NMMMMMMMM
+MMMMMMMMMMMWKxdxxxkkkkkkOOOOOOOOOOOOOOOOKWMMMMMMMM
+MMMMMMMMMWN0kxddxxxxkkkkkkkkOOOOOOOOkkOKWMMMMMMMMM
+MMMMMMMMWXOxxxxddddxxxxkkkkkkkkkkkkkkOXWMMMMMMMMMM
+MMMMMMMMXOkkxxxxxxxxxxxxxxxxxxxxxxxxkKWMMMMMMMMMMM
+MMMMMMMN0kkkkkkkkkxOKKK0OkkdddxxxxxkkKWMMMMMMMMMMM
+MMMMMMMNOkOOOOOkkkkKWMMMNKkdxxxkkkkkOXWMMMMMMMMMMM
+MMMMMMMW0kkOOOOOkk0NMMMMXOkdxxkkkkkOOXMMMMMMMMMMMM
+MMMMMMMMNKOkkkOOOKNMMMMMNXOxxxkkkOOO0WMMMMMMMMMMMM
+MMMMMMMMMWNXXXXXNWMMMMMMMMN0kkkkkOOKNMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMWXK000KNWMMMMMMMMMMMMMM
